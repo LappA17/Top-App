@@ -1,0 +1,42 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+
+	color: var(--black);
+	background: #f5f6f8;
+
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+a {
+	text-decoration: none;
+
+	color: inherit;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.visualyHidden {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+:root {
+	--black: #3b434e;
+	--gray-light: #ebebeb;
+	--gray-dark: #6c7077;
+	--gray: #a4a4a4;
+	--white: white;
+	--primary: #7351f5; //что бы было более конрастно по для людей с плохим зрением
+	--primary-hover: #2d0ea8;
+	--red: #fc836d;
+	--red-light: #fea291;
+	--green: #007b48;
+	--green-light: #c8f8e4;
+	--font-family: 'Noto Sans KR', sans-serif;
+}

@@ -1,0 +1,6 @@
+.next
+.husky
+.plop
+dist
+build
+node_modules

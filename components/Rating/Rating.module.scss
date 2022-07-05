@@ -1,0 +1,30 @@
+.filled svg {
+	fill: var(--primary);
+}
+
+//что бы при фокусе были равные рамки
+.star {
+	display: inline-block;
+}
+.star svg {
+	margin-right: 5px;
+}
+
+.editable {
+	cursor: pointer;
+}
+
+.ratingWrapper {
+	position: relative;
+}
+
+.errorMessage {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	color: var(--red);
+}
+//Таким образом у нас сами svg подсвечиваются крассными. Дело в том что .error у нас подставился вместо wrapper, а внутри него мы находим svgшки
+.error svg {
+	stroke: var(--red);
+}

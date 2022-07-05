@@ -1,0 +1,49 @@
+.button {
+	display: inline-block;
+
+	box-sizing: border-box;
+	padding: 10px;
+
+	cursor: pointer;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+
+	font-size: 14px;
+
+	transition: all 0.9s; //сделаем анимацию что бы при наведение на кнопку с праймери плавно переходило на hover. Первый аргументом в Транзишен мы указываем какое свойство будет анимироваться вторым аргументом за сколько
+}
+
+.primary {
+	color: var(--white);
+	background-color: var(--primary);
+}
+//при наведение
+.primary:hover {
+	background-color: var(--primary-hover);
+}
+
+.ghost {
+	color: var(--black);
+	background: none;
+	border: 1px solid var(--gray-light);
+}
+.ghost:hover {
+	color: var(--white);
+	background-color: var(--primary);
+}
+
+.arrow {
+	display: inline-block; //Потому что мы хотим что бы стрелка шла за ними
+
+	margin-left: 10px;
+}
+.down {
+	transform: rotate(90deg); //поварачиваем кнопку на 90 градусов
+	transition: all 0.9s; // с какой скоростью
+}
+//Если кнопка у нас primary то вложенная в нее svg должна иметь fill: var(--white); и тоже самое относится к .ghost:hover
+.primary svg,
+.ghost:hover svg {
+	fill: var(--white);
+}

@@ -1,0 +1,21 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint"],
+	"rules": {
+		"semi": "off",
+		"@typescript-eslint/semi": ["warn"],
+		"@typescript-eslint/no-empty-interface": [
+			"error",
+			{
+				"allowSingleExtends": true
+			}
+		]
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react-hooks/recommended" // npm i eslint-plugin-react-hooks --save-dev для того что бы еслинт контролировал наши хуки(мы не сможем вложить хук в if к примеру или в другие вложености, теперь нас еслинт ограничит использованием хуков только на самом верхнем уровне нашего компонента)
+	]
+}

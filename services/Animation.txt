@@ -1,0 +1,65 @@
+Начальное состояние и анимация
+<motion.div
+    initial={{ opacity: 0}} --> начальное значение
+    transition={{ ease: "easeOut", duration: 2 }} --> информация о переходе
+    animate={{ opacity: 1 }} --> до какого значения изменить после анимации
+>
+    Текст
+</motion.div>
+
+Ключевые кадры
+<motion.div
+    initial={{ opacity: 0}} 
+    transition={{ times: [0, 0.1, 1], duration: 2 }} -->  это временые отрезки кадров. Здесь мы задаём то что будет ниже, 10 процентов времени будет потрачено на       переход между 0 -> 1(в animate) потому что переход от 0 до 0.1 - это 10 процентов, а дальще 90 процентов времени(с 0.1 до 1) будет потрачено на переход между 1 до 0.5
+    animate={{ opacity: [0, 1, 0.5] }}  --> здесь это значение для каждого кадра. Сначало будет скрыт, потом станет полностью видимым те 1 и потом полу прозрачный 0.5
+>
+    Текст
+</motion.div>
+
+Варианты
+const variants = {
+    visible: { opacity: 1},
+    hidden: { opacity: 0}
+}
+<motion.div
+    initial="hidden" 
+    transition="visible"
+    animate={variants}} 
+>
+    Текст
+</motion.div>
+
+Варианты для children
+const variants = {
+    visible: { opacity: 1},
+    hidden: { opacity: 0}
+}
+const variants2 = {
+    visible: { x: -100 },
+    hidden: { x: 100 }
+}
+<motion.div
+    initial="hidden" 
+    transition="visible"
+    animate={variants}} 
+>
+    <motion.span variants={variants2}>Текст1</motion.span>
+    <motion.span variants={variants2}>Текст2</motion.span>
+</motion.div>
+
+Орекстрация
+const variant = {
+    visible: {
+        opacity: 1,
+        transition: {
+            when: 'beforeChildren', --> анимировать перед children
+            staggerChildren: 0.5,   --> задержка между появлением children
+        },
+    },
+    hidden: { opacity: 0 }
+}
+Здесь сначало произойдет анимация родителя, потом по одному анимация детей
+
+layout
+<motion.div layout>Test</motion.div>
+Любое изменение layout элемента будет анимированно, в предыдущих случаях мы явно указывали как мы будем анимировать(от опесити 0 до 1), а здесь мы говорим что анимируйте при изменения layout

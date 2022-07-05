@@ -1,0 +1,10 @@
+const controls = useAnimation()  --> получение контрола
+controls.start({ opacity: 1})  --> запуск анимации(если у нас опасити 0, то запустив старт опасити 1 мы получим от 0 до 1 состояние переход)
+
+<motion.div animate={controls}> --> контролируемый элемент
+    Текст
+</motion.div>
+
+Последовательная анимация
+await controls.start({ opacity: 1}) -> возврат Promise
+await controls.start({ width: 100})

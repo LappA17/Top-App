@@ -1,0 +1,77 @@
+.firstLevel {
+	display: grid;
+	grid-template-columns: 24px 1fr;
+	gap: 20px;
+	align-items: center;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 25px;
+	margin-top: 20px;
+}
+
+.firstLevelList {
+	list-style: none;
+	padding: 0;
+}
+
+.firstLevelActive,
+.firstLevel:hover {
+	color: var(--primary);
+}
+
+.firstLevelActive svg,
+.firstLevel:hover svg {
+	fill: var(--primary);
+}
+
+.secondLevel {
+	margin-bottom: 10px;
+
+	cursor: pointer;
+	text-transform: uppercase;
+
+	color: var(--gray-dark);
+
+	font-weight: 300;
+	font-size: 12px;
+	//line-height: 16px; тоже уберем что бы не было кривых линий при работе с клавы
+
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+.secondBlock {
+	margin-top: 15px;
+	margin-left: 12px;
+	padding: 0 0 0 32;
+
+	list-style: none;
+
+	border-left: 1px solid #dfdfdf;
+}
+
+.secondLevelBlock {
+	overflow: hidden; //что бы элемнет не был доступен для нажатие когда его не видно
+	list-style: none;
+	padding: 0;
+}
+
+.thirdLevel {
+	margin-bottom: 10px;
+	display: block;
+
+	cursor: pointer;
+
+	color: var(--gray-dark);
+	font-weight: 500;
+	font-size: 14px;
+	//line-height: 19px; это мы пофиксим неровный аутЛайн при работе с клавиатуры
+
+	outline-offset: -1px; //что бы при нажатие с клавиатуры не было кривых линий. АутЛанй Оффсет позволяет сделать небольшое смешение нашего аутлайна, как внаружу так и внутрь
+}
+
+.thirdLevelActive,
+.thirdLevel:hover {
+	color: var(--primary);
+}

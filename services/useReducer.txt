@@ -1,0 +1,36 @@
+Когда нужно использовать useReducer ?
+Когда у нас детерминированное число переходов между состояниями - это значит что если у нас есть значение которое может быть увеличенно(уменьшено) на какое-то число, то-есть мы не можем просто присвоить ему какое-то число. Вот когда эти детерминированное екшены изменения можно применять к нашему состояние, то useReducer будет полезен
+
+Описание reducer:
+
+type Action = 
+{ type: 'increment', amount: number}
+| { type: 'decrement', amoun: number}
+
+interface State {
+    count: number;
+}
+
+const reducer = (state: State, action: Action) => {
+    switch (action.type) {
+        case 'increment':
+            return {count: state.count + action.amount};
+        case 'decrement':
+            return {count: state.count - action.amount};
+        default:
+            throw new Error()
+    }
+}
+
+Использование:
+
+export const Test = () => {
+    const [state, dispatch] = useReducer(reducer, { count: 0 }); //count - начальное значение
+
+    const func = () => {
+        dispatch({ type: 'increment', amount: 2 }) //здесь указываем на сколько стейт меняем
+    }
+    return (
+        <div></div>
+    )
+}
